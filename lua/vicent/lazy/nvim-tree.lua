@@ -8,6 +8,7 @@ return {
   config = function()
     vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 
+    require'nvim-web-devicons'.setup()
     require("nvim-tree").setup({
       disable_netrw = true,
       view = {
