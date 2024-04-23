@@ -1,17 +1,15 @@
 return {
   "folke/tokyonight.nvim",
   name = "tokyonight",
-  priority = 1000,
   config = function()
-    require('tokyonight').setup({
+    require("tokyonight").setup({
+      style = "storm",
+      transparent = true,
       disable_background = true,
-      styles = {
-        italic = false,
-      },
     })
 
-    vim.cmd.colorscheme "tokyonight-storm"
+    vim.cmd.colorscheme("tokyonight")
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-  end
+  end,
 }
