@@ -11,6 +11,7 @@ return {
     require("nvim-tree").setup({
       disable_netrw = true,
       view = {
+        number = true,
         side = "right",
         width = 36,
       },
@@ -29,9 +30,6 @@ return {
         highlight_git = true,
         icons = {
           glyphs = {
-            default = "󰦨",
-            symlink = "󰦨",
-            bookmark = "󰦨",
             git = {
               unstaged = "",
               staged = "",
