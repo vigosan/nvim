@@ -19,8 +19,9 @@ return {
           "html",
           "lua_ls",
           "rubocop",
-          "tsserver",
+          "solargraph",
           "tailwindcss",
+          "tsserver",
         },
       })
     end,
@@ -32,10 +33,14 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
 
-      lspconfig.tsserver.setup({ capabilities = capabilities })
-      lspconfig.solargraph.setup({ capabilities = capabilities })
+      lspconfig.cssls.setup({ capabilities = capabilities })
+      lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.html.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.rubocop.setup({ capabilities = capabilities })
+      lspconfig.solargraph.setup({ capabilities = capabilities })
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig.tsserver.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
