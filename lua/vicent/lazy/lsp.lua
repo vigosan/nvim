@@ -32,19 +32,30 @@ return {
         lazy = false,
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local lspconfig = require("lspconfig")
 
-            lspconfig.cssls.setup({ capabilities = capabilities })
-            lspconfig.emmet_ls.setup({
+            vim.lsp.config.cssls = {
+                capabilities = capabilities,
+            }
+            vim.lsp.config.emmet_ls = {
                 capabilities = capabilities,
                 filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "scss", "typescriptreact" },
-            })
-            lspconfig.eslint.setup({ capabilities = capabilities })
-            lspconfig.html.setup({ capabilities = capabilities })
-            lspconfig.lua_ls.setup({ capabilities = capabilities })
-            lspconfig.solargraph.setup({ capabilities = capabilities })
-            lspconfig.standardrb.setup({ capabilities = capabilities })
-            lspconfig.tailwindcss.setup({
+            }
+            vim.lsp.config.eslint = {
+                capabilities = capabilities,
+            }
+            vim.lsp.config.html = {
+                capabilities = capabilities,
+            }
+            vim.lsp.config.lua_ls = {
+                capabilities = capabilities,
+            }
+            vim.lsp.config.solargraph = {
+                capabilities = capabilities,
+            }
+            vim.lsp.config.standardrb = {
+                capabilities = capabilities,
+            }
+            vim.lsp.config.tailwindcss = {
                 capabilities = capabilities,
                 settings = {
                     tailwindCSS = {
@@ -58,8 +69,10 @@ return {
                         }
                     }
                 }
-            })
-            lspconfig.ts_ls.setup({ capabilities = capabilities })
+            }
+            vim.lsp.config.ts_ls = {
+                capabilities = capabilities,
+            }
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

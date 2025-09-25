@@ -6,9 +6,11 @@ return {
   config = function()
     require("codecompanion").setup({
       adapters = {
-        copilot = function()
-          return require("codecompanion.adapters").extend("copilot", {})
-        end,
+        http = {
+          copilot = function()
+            return require("codecompanion.adapters").extend("copilot", {})
+          end,
+        },
       },
       strategies = {
         chat = {
